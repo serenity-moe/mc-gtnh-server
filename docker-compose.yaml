@@ -19,6 +19,7 @@ services:
       ICON: "/icon.png"
       MODS: |
         https://github.com/GTNewHorizons/SharedProspecting/releases/download/2.0.5/sharedprospecting-2.0.5.jar
+        https://mediafilez.forgecdn.net/files/2542/338/DiscordIntegration-mc1.7.10-3.0.5.jar
       DUMP_SERVER_PROPERTIES: "TRUE"
       CREATE_CONSOLE_IN_PIPE: "true"
       RCON_CMDS_STARTUP: |-
@@ -30,6 +31,10 @@ services:
         /scoreboard objectives setdisplay list Health
       APPLY_EXTRA_FILES: |
         serverutilities</extra/serverutilities.cfg
+      REPLACE_ENV_IN_PLACE: true
+      REPLACE_ENV_VARIABLE_PREFIX: "CFG_"
+      CFG_DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN}
+      CFG_DISCORD_BOT_CHANNEL_ID: ${DISCORD_BOT_CHANNEL_ID}
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${DATA_DIR}:/data
