@@ -12,6 +12,7 @@ services:
       EULA: "TRUE"
       TYPE: GTNH
       GTNH_PACK_VERSION: "2.8.4"
+      ENABLE_RCON: true
       MEMORY: 8G
       ONLINE_MODE: false
       TZ: "Asia/Kuala_Lumpur"
