@@ -13,8 +13,9 @@ services:
       TYPE: GTNH
       GTNH_PACK_VERSION: "2.8.4"
       ENABLE_RCON: true
+      ONLINE_MODE: ${ONLINE_MODE}
+      WHITELIST: ${WHITELIST}
       MEMORY: 8G
-      ONLINE_MODE: false
       TZ: "Asia/Kuala_Lumpur"
       ICON: "/icon.png"
       MODS: |
