@@ -52,6 +52,9 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${DATA_DIR}:/data:ro
       - ${BACKUP_DIR}:/backups
+    depends_on:
+      mc:
+        condition: service_healthy
   daily-b2-backup:
     image: itzg/mc-backup
     restart: unless-stopped
@@ -67,3 +70,6 @@ services:
       - ${DATA_DIR}:/data:ro
       - ${BACKUP_DIR}:/backups
       - ./rclone.conf:/config/rclone/rclone.conf:ro
+    depends_on:
+      mc:
+        condition: service_healthy
