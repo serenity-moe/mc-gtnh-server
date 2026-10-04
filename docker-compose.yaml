@@ -40,30 +40,30 @@ services:
       start_period: 1m
       interval: 5s
       retries: 20
-#  hourly-tar-backup:
-#    image: itzg/mc-backup
-#    restart: unless-stopped
-#    environment:
-#      RCON_HOST: mc
-#      BACKUP_METHOD: tar
-#      BACKUP_INTERVAL: "2h"
-#      PRUNE_BACKUPS_COUNT: 6
-#    volumes:
-#      - /etc/localtime:/etc/localtime:ro
-#      - ${DATA_DIR}:/data:ro
-#      - ${BACKUP_DIR}:/backups
-#  daily-b2-backup:
-#    image: itzg/mc-backup
-#    restart: unless-stopped
-#    environment:
-#      RCON_HOST: mc
-#      BACKUP_METHOD: restic
-#      BACKUP_INTERVAL: "24h"
-#      PRUNE_BACKUPS_DAYS: 7
-#      RESTIC_PASSWORD: ${RESTIC_PASSWORD}
-#      RESTIC_REPOSITORY: ${RESTIC_REPOSITORY}
-#    volumes:
-#      - /etc/localtime:/etc/localtime:ro
-#      - ${DATA_DIR}:/data:ro
-#      - ${BACKUP_DIR}:/backups
-#      - ./rclone.conf:/config/rclone/rclone.conf:ro
+  hourly-tar-backup:
+    image: itzg/mc-backup
+    restart: unless-stopped
+    environment:
+      RCON_HOST: mc
+      BACKUP_METHOD: tar
+      BACKUP_INTERVAL: "2h"
+      PRUNE_BACKUPS_COUNT: 6
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DATA_DIR}:/data:ro
+      - ${BACKUP_DIR}:/backups
+  daily-b2-backup:
+    image: itzg/mc-backup
+    restart: unless-stopped
+    environment:
+      RCON_HOST: mc
+      BACKUP_METHOD: restic
+      BACKUP_INTERVAL: "24h"
+      PRUNE_BACKUPS_DAYS: 7
+      RESTIC_PASSWORD: ${RESTIC_PASSWORD}
+      RESTIC_REPOSITORY: ${RESTIC_REPOSITORY}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${DATA_DIR}:/data:ro
+      - ${BACKUP_DIR}:/backups
+      - ./rclone.conf:/config/rclone/rclone.conf:ro
