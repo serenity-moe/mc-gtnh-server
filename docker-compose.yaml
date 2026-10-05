@@ -32,6 +32,7 @@ services:
         /scoreboard objectives setdisplay list Health
       APPLY_EXTRA_FILES: |
         serverutilities</extra/serverutilities.cfg
+        serverutilities/server</extra/server/ranks.txt
       REPLACE_ENV_IN_PLACE: true
       REPLACE_ENV_VARIABLE_PREFIX: "CFG_"
       CFG_DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN}
